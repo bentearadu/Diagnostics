@@ -1,0 +1,17 @@
+
+
+#pragma once
+/**
+ * See CAN_Vector_XL.cpp for the implementation of this class
+ */
+class CUDS_Protocol : public CWinApp
+{
+public:
+    CUDS_Protocol();
+
+    // Overrides
+public:
+    virtual BOOL InitInstance();
+
+    DECLARE_MESSAGE_MAP()
+};

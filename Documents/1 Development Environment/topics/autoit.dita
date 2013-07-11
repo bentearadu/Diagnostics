@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" []>
+<topic id="autoit" xml:lang="en-us">
+  <title>AutoIt - GUI Automation and Testing Tool</title>
+  <prolog>
+    <author>Ratnadip Choudhury</author>
+    <copyright>
+      <copyryear year="2011"/>
+      <copyrholder>ROBERT BOSCH ENGINEERING AND BUSINESS SOLUTIONS LIMITED</copyrholder>
+    </copyright>
+  </prolog>
+  <body>
+    <section>
+      <title>Description</title>
+      <p>AutoIt v3 is a freeware BASIC-like scripting language designed for automating the Windows GUI and general scripting.</p>
+      <p>It uses a combination of simulated keystrokes, mouse movement and window/control manipulation in order to automate tasks.</p>
+      <p>AutoIt is also very small, self-contained and will run on all versions of Windows out-of-the-box with no annoying &quot;runtimes&quot; required!</p>
+      <p>Features (as described on their homepage):</p>
+      <ul>
+        <li>Easy to learn BASIC-like syntax</li>
+        <li>Simulate keystrokes and mouse movements</li>
+        <li>Manipulate windows and processes</li>
+        <li>Interact with all standard windows controls</li>
+        <li>Scripts can be compiled into standalone executables</li>
+        <li>Create Graphical User Interfaces (GUIs)</li>
+        <li>COM support</li>
+        <li>Regular expressions</li>
+        <li>Directly call external DLL and Windows API functions</li>
+        <li>Scriptable RunAs functions</li>
+        <li>Detailed help file and large community-based support forums</li>
+        <li>Compatible with Windows 95 / 98 / ME / NT4 / 2000 / XP / 2003 / Vista / 2008</li>
+        <li>Unicode and x64 support</li>
+        <li>Digitally signed for peace of mind</li>
+        <li>Works with Windows Vista&apos;s User Account Control (UAC)</li>
+      </ul>
+      <p>AutoIt has been designed to be as small as possible and stand-alone with no external .dll files or registry entries required making it safe to use on Servers. </p>
+      <p>Scripts can be compiled into stand-alone executables with Aut2Exe.</p>
+      <p>A manual is available at <xref href="http://www.autoitscript.com/autoit3/docs/" scope="external"/>.</p>
+    </section>
+    <section>
+      <title>Download</title>
+      <p>AutoIt is available for download at <xref href="http://www.autoitscript.com/site/autoit/downloads/" scope="external"/>. Download the installed <filepath>autoit-v3-setup.exe</filepath> (2011-10-25).</p>
+    </section>
+    <section>
+      <title>Installation</title>
+      <p>Just execute the installer <filepath>autoit-v3-setup.exe</filepath>. The standard installation folder is <filepath>%ProgramFiles%\AutoIt3</filepath>.</p>
+    </section>
+    <section>
+      <title>Configuration</title>
+      <p>The is no specific configuration necessary.</p>
+    </section>
+    <section>
+      <title>Usage</title>
+      <p>BUSMASTER provides test script in the AutoIt format in the folder <filepath>Tests\AutoIt</filepath>. Their is a sub folder for each test group, e.g. <filepath>Tests\AutoIt\Installer</filepath>. The central <filepath>build.bat</filepath> script executes all tests and summarizes failures in an HTML report.</p>
+      <p>If you intend to develop further AutoIt test scripts, please follow the following general guidelines to   make the usage of the AutoIt tool for our application testing more maintainable:</p>
+      <ul>
+        <li>Test cases have the file extension <filepath>.au3</filepath>. The base name of the script and all necessary files should be identical and reflect the name of the test.</li>
+        <li>Test cases should run independently from each other. Thus a tester is able to execute specific individual test cases.</li>
+        <li>Test cases should run on different system, e.g. different working directory, language environments. Thus don&apos;t use absolute paths in AutoIt scripts. Instead use the AutoIt global variables, e.g. <cmdname>@ScriptDir</cmdname>, <cmdname>@ScriptName</cmdname>, <cmdname>@ProgramFilesDir</cmdname>.</li>
+        <li>Files that get generated during the test execution should be placed in <filepath>out</filepath> folders, e.g. <filepath>Tests\AutoIt\Format Converter\out</filepath>. This makes it easier for the central <filepath>.gitignore</filepath> file to keep such results out of the source code management system.</li>
+        <li>Informations during the test run should be reported to the <filepath>stdout</filepath>. Use the <cmdname>ConsoleWrite</cmdname> command for it.</li>
+        <li>Errors during the test run should be reported to <filepath>stderr</filepath>. Use the <cmdname>ConsoleWriteError</cmdname> command for it. If anything goes to <filepath>stderr</filepath> the test case is assumed as failed.</li>
+        <li>
+          <p>Try to avoid using absolute paths in AutoIt scripts as much as possible. Instead use the AutoIt global variables to determine path information.</p>
+        </li>
+        <li>Try to avoid runtime specific behavior. Thus try to avoid using the <cmdname>Sleep</cmdname> command, but try to use the <cmdname>WinWaitActive</cmdname> command instead.</li>
+        <li>
+          <p>Add your test case to the central <filepath>Tests\AutoIt\build.bat</filepath> script, if you feel confident that all aforementioned points are fulfilled.</p>
+        </li>
+      </ul>
+      <p>The testing with AutoIt automation can be divided into two varieties:<ul>
+          <li>Fully Automatic testing requires no manual interaction and is based on the Simulation interface.</li>
+          <li>Semi Automatic System Testing: Involves some manual procedures (e.g. attaching hardware devices) mentioned in related guideline.</li>
+        </ul></p>
+    </section>
+  </body>
+</topic>

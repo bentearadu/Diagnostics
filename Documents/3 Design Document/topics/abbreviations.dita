@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" []>
+<topic id="abbreviations" xml:lang="en-us">
+  <title>List of Abbreviations</title>
+  <prolog>
+    <author>Ratnadip Choudhury</author>
+    <copyright>
+      <copyryear year="2011"/>
+      <copyrholder>ROBERT BOSCH ENGINEERING AND BUSINESS SOLUTIONS LIMITED</copyrholder>
+    </copyright>
+  </prolog>
+  <body>
+    <p>Abbreviations, non-standard terms and acronyms that are used in this document are to be listed here.</p>
+    <table>
+      <tgroup cols="2">
+        <tbody>
+          <row>
+            <entry>API</entry>
+            <entry>Application Programming Interface</entry>
+          </row>
+          <row>
+            <entry>BOA</entry>
+            <entry>Basic Open Architecture</entry>
+          </row>
+          <row>
+            <entry>CAN</entry>
+            <entry>Controller Area Network</entry>
+          </row>
+          <row>
+            <entry>DIL</entry>
+            <entry>Driver Interface Library</entry>
+          </row>
+          <row>
+            <entry>FlexRay</entry>
+            <entry>A vehicle communication system developed by the FlexRay consortium</entry>
+          </row>
+          <row>
+            <entry>GUI</entry>
+            <entry>Graphic User Interface</entry>
+          </row>
+          <row>
+            <entry>HLD</entry>
+            <entry>High Level Design</entry>
+          </row>
+          <row>
+            <entry>J1939</entry>
+            <entry>A CAN based higher layer vehicle bus standard</entry>
+          </row>
+          <row>
+            <entry>LIN</entry>
+            <entry>Local Interconnect Network</entry>
+          </row>
+          <row>
+            <entry>OOD</entry>
+            <entry>Object Oriented Design</entry>
+          </row>
+          <row>
+            <entry>OSS</entry>
+            <entry>Open Source Software</entry>
+          </row>
+          <row>
+            <entry>RBEI</entry>
+            <entry>Robert Bosch Engineering and Business Solutions Limited</entry>
+          </row>
+          <row>
+            <entry>SEI</entry>
+            <entry>Software Engineering Institute</entry>
+          </row>
+          <row>
+            <entry>UI</entry>
+            <entry>User Interface</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </body>
+</topic>

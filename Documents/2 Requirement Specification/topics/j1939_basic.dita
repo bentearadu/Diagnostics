@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" []>
+<topic id="j1939_basic" xml:lang="en-us">
+  <title>J1939 Basic</title>
+  <prolog>
+    <author>Ratnadip Choudhury</author>
+    <copyright>
+      <copyryear year="2011"/>
+      <copyrholder>ROBERT BOSCH ENGINEERING AND BUSINESS SOLUTIONS LIMITED</copyrholder>
+    </copyright>
+  </prolog>
+  <body>
+    <section>
+      <title>Developer Diagrams</title>
+      <p>J1939 bus - abstract view</p>
+      <image placement="break" href="../images/umls/dd_j1939_bus_abstract_view.png"/>
+      <p>J1939 bus - developer&apos;s view</p>
+      <image placement="break" href="../images/umls/dd_j1939_bus_developers_view.png"/>
+    </section>
+    <section>
+      <title>Interface Diagrams</title>
+      <p>DIL-J1939</p>
+      <image placement="break" href="../images/umls/id_dil_j1939.png"/>
+    </section>
+    <section>
+      <title>State Diagrams</title>
+      <p>Init-Uninit</p>
+      <image placement="break" href="../images/umls/sd_init_uninit.png"/>
+      <p>Online-Offline</p>
+      <image placement="break" href="../images/umls/sd_online_offline.png"/>
+      <p>Reading</p>
+      <image placement="break" href="../images/umls/sd_reading.png"/>
+      <p>Register-Unregister</p>
+      <image placement="break" href="../images/umls/sd_register_unregister.png"/>
+      <p>Transmission</p>
+      <image placement="break" href="../images/umls/sd_transmission.png"/>
+    </section>
+    <section>
+      <title>State Machines</title>
+      <p>DIL-J1939</p>
+      <image placement="break" href="../images/umls/sm_dil_j1939.png"/>
+    </section>
+    <section>
+      <title>Usecase Diagrams</title>
+      <p>Features-DIL_J1939</p>
+      <image placement="break" href="../images/umls/ud_features_dil_j1939.png"/>
+    </section>
+    <section>
+      <title>Requirement Tags</title>
+      <ul>
+        <li>Initialise and uninitialise [RS_26_01][RS_26_02]</li>
+        <li>Register / unregister client [RS_26_03][RS_26_04]</li>
+        <li>Include / excluce client buffer [RS_26_05][RS_26_06]</li>
+        <li>Go online / offline &amp; query [RS_26_07][RS_26_08][RS_26_09]</li>
+        <li>Send peer-peer, broadcast, ack, request frames [RS_26_10][RS_26_11][RS_26_12][RS_26_13]</li>
+        <li>Pump received frames into client channel [RS_26_14]</li>
+        <li>Get node name, address &amp; validate address [RS_26_15][RS_26_16][RS_26_17]</li>
+        <li>Claim, request and command address [RS_26_18][RS_26_19][RS_26_20]</li>
+        <li>Timeout configuration [RS_26_21]</li>
+        <li>Get time mode mapping [RS_26_22]</li>
+      </ul>
+    </section>
+  </body>
+</topic>

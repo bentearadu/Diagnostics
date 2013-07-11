@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" []>
+<topic id="cppcheck" xml:lang="en-us">
+  <title>Cppcheck - Static Source Code Checker</title>
+  <prolog>
+    <author>Ratnadip Choudhury</author>
+    <copyright>
+      <copyryear year="2011"/>
+      <copyrholder>ROBERT BOSCH ENGINEERING AND BUSINESS SOLUTIONS LIMITED</copyrholder>
+    </copyright>
+  </prolog>
+  <body>
+    <section>
+      <title>Description</title>
+      <p>There are many static source code checkers available and used by Open Source projects.</p>
+      <p>Cppcheck is another Open Source software, which is able to parse C++ code and is therefore used for BUSMASTER.</p>
+    </section>
+    <section>
+      <title>Download</title>
+      <p>Cppcheck is available under: <xref href="http://cppcheck.sourceforge.net/" scope="external"/>. Just download the most current version, e.g. <filepath>cppcheck-1.50-x86-Setup.msi</filepath> (as of 2011-10-25).</p>
+    </section>
+    <section>
+      <title>Installation</title>
+      <p>Execute the installer. The standard installation folder is <filepath>%ProgramFiles%\Cppcheck</filepath>. Cppcheck should automatically be added to your %PATH% environment variable.</p>
+    </section>
+    <section>
+      <title>Configuration</title>
+      <p>The test script in <filepath>Tests\Cppcheck</filepath> contains all necessary configuration. Beside that no specific configuration necessary.</p>
+    </section>
+    <section>
+      <title>Usage</title>
+      <p>Execute the test script in <filepath>Tests\Cppcheck\build.bat</filepath>. It automatically generates an HTML report with the results.</p>
+    </section>
+  </body>
+</topic>

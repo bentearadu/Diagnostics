@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/map.dtd" []>
+<map>
+  <title>Development manual</title>
+  <topicmeta>
+    <author>Ratnadip Choudhury</author>
+    <copyright>
+      <copyryear year="2011"/>
+      <copyrholder>ROBERT BOSCH ENGINEERING AND BUSINESS SOLUTIONS LIMITED</copyrholder>
+    </copyright>
+  </topicmeta>
+  <topicref href="topics/license_information.dita" type="topic" toc="no"/>
+  <topichead navtitle="Download">
+    <topicref href="topics/git.dita" type="topic"/>
+  </topichead>
+  <topichead navtitle="Build">
+    <topicref href="topics/msbuild.dita" type="topic"/>
+    <topicref href="topics/vc.dita" type="topic"/>
+    <topicref href="topics/Build_Configurations.dita" type="topic"/>
+    <topicref href="topics/Installation_Of_Additional_Libraries.dita" type="topic"/>
+  </topichead>
+  <topichead navtitle="Documentation">
+    <topicref href="topics/dita-ot.dita" type="topic"/>
+    <topicref href="topics/doxygen.dita" type="topic"/>
+    <topicref href="topics/serna.dita" type="topic"/>
+  </topichead>
+  <topichead navtitle="Tests">
+    <topicref href="topics/astyle.dita" type="topic"/>
+    <topicref href="topics/autoit.dita" type="topic"/>
+    <topicref href="topics/cppcheck.dita" type="topic"/>
+    <topicref href="topics/pmd.dita" type="topic"/>
+    <topicref href="topics/testcocoon.dita" type="topic"/>
+  </topichead>
+  <topichead navtitle="Installation">
+    <topicref href="topics/nsis.dita" type="topic"/>
+  </topichead>
+  <topichead navtitle="Continuous Integration Server">
+    <topicref href="topics/jenkins.dita" type="topic"/>
+  </topichead>
+</map>

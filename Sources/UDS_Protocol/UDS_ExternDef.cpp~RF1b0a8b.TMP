@@ -1,0 +1,141 @@
+
+#pragma once
+#include "StdAfx.h"
+#include <afxdllx.h>
+#define USAGE_EXPORT
+#include "UDS_Extern.h"
+#include "UDSMainWnd.h"
+#include "UDS_Protocol.h"
+//#include "Uds_MainWndDlg.h"
+//#include "UDS_DiagSettDlg.h"
+//#include "JuanM.h"
+//#include <afxwin.h>         // MFC core and standard components
+//#include "Replay/ReplayFileConfigDlg.h"
+				
+//static AFX_EXTENSION_MODULE UDS_DLL = { NULL, NULL };
+//
+//extern "C" int APIENTRY
+//DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
+//{
+//    static HINSTANCE shLangInst=NULL;
+//
+//
+//    // Remove this if you use lpReserved
+//    UNREFERENCED_PARAMETER(lpReserved);
+//
+//    if (dwReason == DLL_PROCESS_ATTACH)
+//    {
+//        TRACE0("TXWindow.DLL Initializing!\n");
+//
+//        // Extension DLL one-time initialization
+//        if (!AfxInitExtensionModule(UDS_DLL, hInstance))
+//        {
+//            return 0;
+//        }
+//
+//        // Insert this DLL into the resource chain
+//        // NOTE: If this Extension DLL is being implicitly linked to by
+//        //  an MFC Regular DLL (such as an ActiveX Control)
+//        //  instead of an MFC application, then you will want to
+//        //  remove this line from DllMain and put it in a separate
+//        //  function exported from this Extension DLL.  The Regular DLL
+//        //  that uses this Extension DLL should then explicitly call that
+//        //  function to initialize this Extension DLL.  Otherwise,
+//        //  the CDynLinkLibrary object will not be attached to the
+//        //  Regular DLL's resource chain, and serious problems will
+//        //  result.
+//
+//        // Begin of Multiple Language support
+//        //if ( CMultiLanguage::m_nLocales <= 0 )  // Not detected yet
+//        //{
+//        //    CMultiLanguage::DetectLangID();     // Detect language as user locale
+//        //    CMultiLanguage::DetectUILanguage(); // Detect language in MUI OS
+//        //}
+//        TCHAR szModuleFileName[MAX_PATH];       // Get Module File Name and path
+//        int ret = ::GetModuleFileName(hInstance, szModuleFileName, MAX_PATH);
+//        if ( ret == 0 || ret == MAX_PATH )
+//        {
+//            ASSERT(FALSE);
+//        }
+//        // Load resource-only language DLL. It will use the languages
+//        // detected above, take first available language,
+//        // or you can specify another language as second parameter to
+//        // LoadLangResourceDLL. And try that first.
+//        /*shLangInst = CMultiLanguage::LoadLangResourceDLL( szModuleFileName );
+//        if (shLangInst)
+//        {
+//            TXWindowDLL.hResource = shLangInst;
+//        }*/
+//        // End of Multiple Language support
+//
+//
+//        new CDynLinkLibrary(UDS_DLL);
+//
+//    }
+//    else if (dwReason == DLL_PROCESS_DETACH)
+//    {
+//        if (shLangInst)
+//        {
+//            FreeLibrary(shLangInst);
+//        }
+//
+//        //Clear any memory allocated
+//       /* CTxMsgManager::s_bDeleteTxMsgManager();
+//        TRACE0("TXWindow.DLL Terminating!\n");*/
+//
+//        // Terminate the library before destructors are called
+//        AfxTermExtensionModule(UDS_DLL);
+//    }
+//    return 1;   // ok
+//}
+
+BEGIN_MESSAGE_MAP(CUDS_Protocol, CWinApp)
+END_MESSAGE_MAP()
+
+
+/**
+ * CUDS_Protocol construction
+ */
+CUDS_Protocol::CUDS_Protocol()
+{
+    // TODO: add construction code here,
+    // Place all significant initialization in InitInstance
+}
+
+
+// The one and only CUDS_Protocol object
+CUDS_Protocol theApp;
+
+
+/**
+ * CUDS_Protocol initialization
+ */
+
+static HINSTANCE ghLangInst=NULL;
+
+BOOL CUDS_Protocol::InitInstance()
+{
+    CWinApp::InitInstance();
+
+    return TRUE;
+}
+
+USAGEMODE HRESULT DIL_UDS_ShowWnd(HWND hParent)
+{
+	//HRESULT hResult = S_OK;
+	//DWORD hResult
+    AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	//HINSTANCE hInst = AfxGetResourceHandle();	//Added to try to set the handler
+	//AfxSetResourceHandle(UDS_DLL.hResource);   //Added to try to set the handler
+	INT_PTR nRet = -1; 
+	CWnd objParent;
+	objParent.Attach(hParent);
+	
+	CUDSMainWnd omDlg(&objParent);
+	omDlg.ShowWindow(SW_SHOW);
+	//nRet= omDlg.DoModal();
+
+	objParent.Detach();
+
+	return 0;
+}
