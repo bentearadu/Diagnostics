@@ -122,11 +122,18 @@ public:
 	void CUDSSettingsWnd::OnCbnSelchangeStandardDiag();
 
 	/**
-	\brief It saves all the settings settled previously in the settings window
-	* This function is called by the framework when the user press the OK buttom in the
+	\brief It saves all the settings settled previously in the settings window    and also closes the Wnd
+	* This function is called by the framework when the user press the OK button in the
 	* Settings Window to save all the changes made  previously. 
 	*/
 	void CUDSSettingsWnd::OnBnOKPressed();
+
+	/**
+	\brief It saves all the settings settled previously in the settings window
+	* This function is called by the framework when the user press the Apply button in the
+	* Settings Window to save all the changes made  previously. 
+	*/
+	void CUDSSettingsWnd::OnBnApplyPressed();
 
 	/** It sets in the settings Window the default values according to the standard */	
 	void CUDSSettingsWnd::OnDefaultValuesPressed();

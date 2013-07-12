@@ -174,6 +174,7 @@ BEGIN_MESSAGE_MAP(CUDSSettingsWnd, CDialog)
 	ON_CBN_SELCHANGE(IDC_COMBO_INTERFACE, OnCbnSelchangeComboInterface)
 	ON_CBN_SELCHANGE(IDC_COMBO_STAND_DIAG, OnCbnSelchangeStandardDiag)
 	ON_BN_CLICKED(IDC_OKButton, OnBnOKPressed)
+	ON_BN_CLICKED(ID_APPLY_Button, OnBnApplyPressed)
 	ON_BN_CLICKED(ID_CANCEL, OnBnCancelPressed)
 	ON_BN_CLICKED(IDC_DefaultValues, OnDefaultValuesPressed)	
 	ON_EN_UPDATE( IDC_STmin, OnEnChangeSTmin) 
@@ -527,14 +528,14 @@ void CUDSSettingsWnd::OnCbnSelchangeStandardDiag(){
  Function Name  :   OnBnOKPressed
  Input(s)       :   -
  Output         :	-
- Description    :  This function is called by the framework when the user press the OK buttom in the
+ Description    :  This function is called by the framework when the user press the OK button in the
 				   Settings Window to save all the changes made  previously.  
  Member of      :  CUDSSettingsWnd
 
  Author(s)      :  Sanchez Marin Maria Alejandra
 *******************************************************************************************************************/
 
-void CUDSSettingsWnd::OnBnOKPressed(){
+void CUDSSettingsWnd::OnBnApplyPressed(){
 
 	UpdateData(); 
 	Prev_DiagnosticsIndex = m_nDiagnosticsIndex;
@@ -670,8 +671,13 @@ void CUDSSettingsWnd::OnBnOKPressed(){
 	OnEnChangeBSize();
 	OnEnChangeS3_Client();
 	OnEnChangeS3_Server();
-	//this->ShowWindow(SW_HIDE);
 
+}
+
+
+void CUDSSettingsWnd::OnBnOKPressed(){
+	OnBnApplyPressed();
+	this->ShowWindow(SW_HIDE);
 }
 
 /*******************************************************************************************************************

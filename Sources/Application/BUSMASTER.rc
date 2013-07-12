@@ -1150,10 +1150,10 @@ BEGIN
             MENUITEM "All &Error Handler(s)",       IDM_EXECUTE_ERROR_HANDLERS, CHECKED
             MENUITEM "&All Handler(s)",             IDM_EXECUTE_ALL_HANDLERS
         END
-		POPUP "UDS Protocol",                      /*65535,MFT_STRING,MFS_ENABLED*/
+		POPUP "Diagnostics",                      /*65535,MFT_STRING,MFS_ENABLED*/
         BEGIN
             MENUITEM "&Main Window",               IDM_UDS/*,MFT_STRING,MFS_ENABLED*/
-			MENUITEM "&Diagnostic Settings",       IDD_SETTINGS_UDS/*,MFT_STRING,MFS_ENABLED*/
+			MENUITEM "&Settings",       IDD_SETTINGS_UDS/*,MFT_STRING,MFS_ENABLED*/
         END
 
     END
