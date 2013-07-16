@@ -30,7 +30,7 @@
 #include "TxMsgManager.h"
 #include "TxMsgChildFrame.h"
 #include "Utility\MultiLanguageSupport.h"
-#include "UDS_Protocol/UDSMainWnd.h"  //ADDED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#include "UDS_Protocol/UDSMainWnd.h" 
 
 static AFX_EXTENSION_MODULE TXWindowDLL = { NULL, NULL };
 

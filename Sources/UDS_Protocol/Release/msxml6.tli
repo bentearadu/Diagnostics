@@ -1,9 +1,9 @@
-﻿// Created by Microsoft (R) C/C++ Compiler Version 15.00.21022.08 (22968eba).
+﻿// Created by Microsoft (R) C/C++ Compiler Version 15.00.21022.08 (9134067f).
 //
-// c:\busmaster_sources_git\sources\uds_protocol\release\msxml6.tli
+// c:\busmaster_github\busmaster\sources\uds_protocol\release\msxml6.tli
 //
 // Wrapper implementations for Win32 type library msxml6.dll
-// compiler-generated file created 05/30/13 at 15:36:21 - DO NOT EDIT!
+// compiler-generated file created 07/12/13 at 13:00:55 - DO NOT EDIT!
 
 #pragma once
 

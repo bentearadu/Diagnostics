@@ -3,7 +3,7 @@
 // c:\busmaster_sources_git\sources\siggrphwnd\busmaster_debug\dmgraph.tlh
 //
 // C++ source equivalent of Win32 type library ..\..\EXTERNAL_SOURCE\DMGraph\DMGraph.tlb
-// compiler-generated file created 07/05/13 at 09:17:37 - DO NOT EDIT!
+// compiler-generated file created 07/16/13 at 10:16:04 - DO NOT EDIT!
 
 #pragma once
 #pragma pack(push, 8)

@@ -492,6 +492,7 @@ void CUDSMainWnd::OnBnClickedSendUD(){
 		{
 			psTxCanMsgUds->m_psTxMsg->m_ucRTR = FALSE;
 			psTxCanMsgUds->m_psTxMsg->m_ucChannel = (UCHAR)m_omComboChannelUDS.GetCurSel()+1;
+			Current_Channel = psTxCanMsgUds->m_psTxMsg->m_ucChannel; 
 			psTxCanMsgUds->m_psTxMsg->m_unMsgID = (int)m_omCanID.lGetValue(); 
 			if(	psTxCanMsgUds->m_psTxMsg->m_unMsgID != 0 && (TargetAddress || SourceAddress)!=0 && m_omMsgDataEdit.GetLength()!=0 ){ 
 				PrepareDiagnosticMessage(m_omMsgDataEdit, psTxCanMsgUds, psTxCanMsgUds->m_psTxMsg->m_ucData, 8);	 //This funtion evaluate if the message is a long or a short request and prepare the message

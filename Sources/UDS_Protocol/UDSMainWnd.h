@@ -47,6 +47,7 @@ extern int BytesShown_Line;
 extern CString CurrentService;
 extern UINT_PTR m_nTimer;
 extern long Font_Color;
+extern int Current_Channel;
 
 
 class CUDSMainWnd : public CDialog

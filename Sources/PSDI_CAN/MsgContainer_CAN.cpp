@@ -280,16 +280,16 @@ void CMsgContainerCAN::vProcessNewData(STCANDATA& sCanData)
 
         STCANDATA* pStcan = &m_sCANReadDataSpl;
         *pStcan = sCanData;
+
+		unsigned char FDataType = m_sCANReadDataSpl.m_ucDataType;			  
+		if(IS_RX_MESSAGE(FDataType)){										  // All the UDS Messages should be analyzed 
+			HRESULT h_Evaluate = EvaluateMessage(m_sCANReadDataSpl.m_uDataInfo.m_sCANMsg );
+		} 
+
         if (!bTobeBlocked(sCanData))
         {
             m_ouAppendCanBuf.WriteIntoBuffer(&m_sCANReadDataSpl);
-			//HRESULT hola = Show_ResponseData(m_sCANReadDataSpl.m_uDataInfo);/*&m_sCANReadDataSpl.m_uDataInfo.m_sCANMsg.m_ucData*/
-		    // Esta función no debería "mostrar directamente sino evaluar si es un long response
-			// Tambien verificar los tiempos,blocksize,etc. 
 			unsigned char FDataType = m_sCANReadDataSpl.m_ucDataType;
-			if(IS_RX_MESSAGE(FDataType)){
-				HRESULT h_Evaluate = EvaluateMessage(m_sCANReadDataSpl.m_uDataInfo.m_sCANMsg.m_ucData, m_sCANReadDataSpl.m_uDataInfo.m_sCANMsg.m_ucDataLen, m_sCANReadDataSpl.m_uDataInfo.m_sCANMsg.m_unMsgID );
-			} 
             if (NULL != m_pRxMsgCallBack)
             {
                 m_pRxMsgCallBack((char*)&sCanData, CAN);

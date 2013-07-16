@@ -486,8 +486,8 @@ void CUDSSettingsWnd::OnCbnSelchangeComboInterface()
 		{
 			m_omReqCanID. LimitText(8);
    			m_omRespCanID. LimitText(8);  
-			m_omReqCanID.vSetValue(0x1BDA0000);		  
-			m_omRespCanID.vSetValue(0x1BDA0000);
+			m_omReqCanID.vSetValue(0x18DA0000);		  
+			m_omRespCanID.vSetValue(0x18DA0000);
 			StringRespCanID= "18DA0000";
 			StringReqCanID= "18DA0000";
 
@@ -725,8 +725,8 @@ switch (sg_asSupportedInterface[m_nInterfaceIndex].m_eType)
 		break;
 		case INTERFACE_NORMAL_J1939_29:
 		{
-			m_omReqCanID.vSetValue(0x1BDA0000);		  
-			m_omRespCanID.vSetValue(0x1BDA0000);
+			m_omReqCanID.vSetValue(0x18DA0000);		  
+			m_omRespCanID.vSetValue(0x18DA0000);
 			StringRespCanID= "18DA0000";
 			StringReqCanID= "18DA0000";
 		}
@@ -802,7 +802,46 @@ void CUDSSettingsWnd::OnBnCancelPressed(){
 				m_omFCLength.SetCurSel(0);
 
 			}
-			break;
+		case INTERFACE_NORMAL_ISO_29:			//In this case I'm changing only the CANID
+			{
+				numberOfTaken=12;	
+				initialByte=0;
+				aux_Finterface = 0; 
+				StringReqBaseAddress = " ";
+				StringRespBaseAddress = " ";
+				UpdateData(false);   
+				m_omReqCanID.vSetValue(TempReq_CanID);
+				m_omRespCanID.vSetValue(TempResp_CanID);
+
+				m_omReqCanID.SetReadOnly(FALSE);		  
+				m_omRespCanID.SetReadOnly(FALSE);
+
+				m_omReqBaseAddress.SetReadOnly(TRUE);
+				m_omRespBaseAddress.SetReadOnly(TRUE);
+
+				m_omCheckMsgDLC.SetCheck(BST_CHECKED);
+				m_omFCLength.SetCurSel(1);
+		}
+		case INTERFACE_NORMAL_J1939_29:			//In this case I'm changing only the CANID
+			{
+				numberOfTaken=12;	
+				initialByte=0;
+				aux_Finterface = 0; 
+				StringReqBaseAddress = " ";
+				StringRespBaseAddress = " ";
+				UpdateData(false);   
+				m_omReqCanID.vSetValue(TempReq_CanID);
+				m_omRespCanID.vSetValue(TempResp_CanID);
+
+				m_omReqCanID.SetReadOnly(FALSE);		  
+				m_omRespCanID.SetReadOnly(FALSE);
+
+				m_omReqBaseAddress.SetReadOnly(TRUE);
+				m_omRespBaseAddress.SetReadOnly(TRUE);
+
+				m_omCheckMsgDLC.SetCheck(BST_CHECKED);
+				m_omFCLength.SetCurSel(1);
+		}		break;
 	}
 
 	//To verify the legth of the simple messages   

@@ -49,6 +49,8 @@ int P2_Time=250;
 
 int P2_Time_Extended =2000;
 
+int Current_Channel=0;
+
 /** This variable is used to know if a message has been sent from the UDSMainWnd  */ 
 bool FSending = FALSE;
 
@@ -226,11 +228,17 @@ void CUDS_Protocol::Show_ResponseData(unsigned char psMsg[], unsigned char Datal
  Date Created   :   19.06.2013
 **********************************************************************************************************/
 
-USAGEMODE HRESULT EvaluateMessage(unsigned char psMsg[],  unsigned char Datalen, UINT MessageID )
+USAGEMODE HRESULT EvaluateMessage( STCAN_MSG  Mensaje  )
 {	
+	unsigned char psMsg[64];
+	memcpy(	psMsg , Mensaje.m_ucData , 64);
+	unsigned char Datalen = Mensaje.m_ucDataLen;
+	UINT MessageID = Mensaje.m_unMsgID;
+	UINT Channel =	Mensaje.m_ucChannel;
+
 	// Datalen is the DLC of the message received
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-	if(omMainWnd!=NULL && FSending && respID==MessageID ){		// Evaluates the received message when: 1.MainWnd created - 2. Response to my Msg - 3.I've sent something
+	if(omMainWnd!=NULL && FSending && respID==MessageID  && Current_Channel== Channel){		// Evaluates the received message when: 1.MainWnd created - 2. Response to my Msg - 3.I've sent something
 		
 		TYPE_OF_FRAME TypeofFrame = omManagerPtr->getFrameType(psMsg[initialByte]);		// This is a general function because it uses the variable initialByte
 		

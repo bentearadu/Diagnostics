@@ -295,8 +295,8 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWnd)
     ON_COMMAND(IDM_GRAPH_WND, OnGraphWindow)
     ON_UPDATE_COMMAND_UI(IDM_GRAPH_WND, OnUpdateGraphWnd)
     ON_COMMAND(IDM_CFGN_REPLAY, OnCfgnReplay)
-	ON_COMMAND(IDM_UDS,OnCfgnUdsMainWnd)				//Added!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-	ON_COMMAND(IDD_SETTINGS_UDS,OnCfgnUdsSettingsWnd)				//Added!!!!!!!!!!!!!!!!!!!!!
+	ON_COMMAND(IDM_UDS,OnCfgnUdsMainWnd)				
+	ON_COMMAND(IDD_SETTINGS_UDS,OnCfgnUdsSettingsWnd)				
 	ON_UPDATE_COMMAND_UI(IDM_CFGN_REPLAY, OnUpdateCfgnReplay)
     ON_COMMAND(IDM_CONFIGURE_SIMULATEDSYSTEMS, OnConfigureSimulatedsystems)
     ON_UPDATE_COMMAND_UI(IDM_DLL_LOADALLDLL, OnUpdateDllLoadAll)
