@@ -1,9 +1,9 @@
-﻿// Created by Microsoft (R) C/C++ Compiler Version 15.00.21022.08 (f5011f8a).
+﻿// Created by Microsoft (R) C/C++ Compiler Version 15.00.21022.08 (0c19d46c).
 //
-// c:\busmaster_sources_git\sources\psdi_can\busmaster_debug\msxml6.tli
+// c:\busmaster_github\busmaster\sources\psdi_can\busmaster_debug\msxml6.tli
 //
 // Wrapper implementations for Win32 type library msxml6.dll
-// compiler-generated file created 07/05/13 at 09:18:13 - DO NOT EDIT!
+// compiler-generated file created 07/17/13 at 10:32:33 - DO NOT EDIT!
 
 #pragma once
 

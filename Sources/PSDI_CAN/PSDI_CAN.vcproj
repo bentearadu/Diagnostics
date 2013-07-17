@@ -305,6 +305,10 @@
 				RelativePath=".\PSDI_CAN.cpp"
 				>
 			</File>
+			<File
+				RelativePath="..\UDS_Protocol\UDS_NegRespMng.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
