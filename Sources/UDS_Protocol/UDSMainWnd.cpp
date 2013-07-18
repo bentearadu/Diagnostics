@@ -141,7 +141,7 @@ int CUDSMainWnd::SendFirstFrame(CString omByteStr, unsigned char abByteArr[], mP
 	int i=7; 
 	omByteStrTemp = omByteStr.Left(c_numberOfTaken);				//I take the part of omByteStr that is going to be sent in the first Frame 
 
-	while(FWait_SendingFrame){}										// Wait if something is being sent in this moment
+	//while(FWait_SendingFrame){}										// Wait if something is being sent in this moment
 	while (omByteStrTemp.GetLength()){
 		omTempByte = omByteStrTemp.Right(NO_OF_CHAR_IN_BYTE);
 		abByteArr[i--] = (BYTE)_tcstol(omTempByte, L'\0', 16);		// Fill the array to sent with the current data 
@@ -190,7 +190,7 @@ void CUDSMainWnd::SendContinuosFrames( unsigned char abByteArr[],mPSTXSELMSGDATA
 	}
 	while (DatatoSend.GetLength()){							// While there is remaining data that has to be sent
 		omByteStrTemp = DatatoSend.Left(c_numberOfTaken);	//I take the part of the message that is going to be sent in the current Frame 
-		while(FWait_SendingFrame){}							// Wait if something is being sent in this moment
+		//while(FWait_SendingFrame){}							// Wait if something is being sent in this moment
 
 		while (omByteStrTemp.GetLength()){
 			omTempByte = omByteStrTemp.Right(NO_OF_CHAR_IN_BYTE);
@@ -245,9 +245,10 @@ void CUDSMainWnd::SendSimpleDiagnosticMessage(void){
 	// member in app class. This will be used to terminate
 	// the thread.
 	if(	psTxCanMsgUds->m_psTxMsg->m_unMsgID != 0 && (TargetAddress || SourceAddress)!=0 ) { 
-		CWinThread* pomThread = NULL ;
-		pomThread = AfxBeginThread( OnSendSelectedMsg, psTxCanMsgUds );
-		FWait_SendingFrame = TRUE;		 // No one can send another message  until this procedure has ended  		
+		//CWinThread* pomThread = NULL ;
+		//pomThread = AfxBeginThread( OnSendSelectedMsg, psTxCanMsgUds );
+		//FWait_SendingFrame = TRUE;		 // No one can send another message  until this procedure has ended  
+		int nReturn = g_pouDIL_CAN_Interface->DILC_SendMsg(g_dwClientID, psTxCanMsgUds->m_psTxMsg[0]);
 	}
 	StartTimer();
 }	

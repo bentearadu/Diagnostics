@@ -1,9 +1,9 @@
-﻿// Created by Microsoft (R) C/C++ Compiler Version 15.00.21022.08 (c5c4eb86).
+﻿// Created by Microsoft (R) C/C++ Compiler Version 15.00.21022.08 (03889a0f).
 //
-// c:\busmaster_sources_git\sources\uds_protocol\busmaster_debug\msxml6.tlh
+// c:\busmaster_github\busmaster\sources\uds_protocol\busmaster_debug\msxml6.tlh
 //
 // C++ source equivalent of Win32 type library msxml6.dll
-// compiler-generated file created 07/16/13 at 10:39:30 - DO NOT EDIT!
+// compiler-generated file created 07/18/13 at 09:32:00 - DO NOT EDIT!
 
 #pragma once
 #pragma pack(push, 8)
@@ -4640,7 +4640,7 @@ ISchemaNotation : ISchemaItem
 // Wrapper method implementations
 //
 
-#include "c:\busmaster_sources_git\sources\uds_protocol\busmaster_debug\msxml6.tli"
+#include "c:\busmaster_github\busmaster\sources\uds_protocol\busmaster_debug\msxml6.tli"
 
 } // namespace MSXML2
 
