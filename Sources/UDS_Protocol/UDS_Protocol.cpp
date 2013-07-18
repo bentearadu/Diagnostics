@@ -49,7 +49,7 @@ int P2_Time=250;
 
 int P2_Time_Extended =2000;
 
-int Current_Channel=0;
+int Current_Channel;
 
 /** This variable is used to know if a message has been sent from the UDSMainWnd  */ 
 bool FSending = FALSE;
@@ -95,6 +95,7 @@ CUDS_Protocol::CUDS_Protocol()
 	MsgID = 0x700;
 	numberOfBytes = 1;
 	Data_Recibida = "";
+	Current_Channel=1 ;
 }
 
 // The one and only CUDS_Protocol object
@@ -255,9 +256,10 @@ USAGEMODE HRESULT EvaluateMessage( STCAN_MSG  Mensaje  )
 						}else {
 							STMin = 127;								 //According to the ISO-TP
 						} 
+						FWaitFlow = FALSE;								// Don't wait for the flowcontrol anymore
+
 						omMainWnd->SendContinuosFrames(  omMainWnd->psTxCanMsgUds->m_psTxMsg->m_ucData,omMainWnd->psTxCanMsgUds,omMainWnd->fInterface );
 
-						FWaitFlow = FALSE;								// Don't wait for the flowcontrol anymore
 						   }
 						   break;
 					case 1:

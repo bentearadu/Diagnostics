@@ -404,7 +404,7 @@ void CUDSSettingsWnd::OnCbnSelchangeComboInterface()
 	//m_omFromEdit.SetReadOnly(TRUE);
 
 	m_nInterfaceIndex = m_omInterface.GetCurSel();
-	//UdsProtocolPtr->fInterface = sg_asSupportedInterface[m_nInterfaceIndex].m_eType;  //Lo coloco acá para modificar cosas en el MainWnd 
+
 	switch (sg_asSupportedInterface[m_nInterfaceIndex].m_eType)
 	{
 	case INTERFACE_NORMAL_11:
@@ -509,7 +509,7 @@ void CUDSSettingsWnd::OnCbnSelchangeComboInterface()
 		break;
 
 	}
-	//OnChkbOnFlowC8();		// Para actalizar el tamaño del Flow Control
+
 	UpdateData(false);  
 }
 /*******************************************************************************************************************
@@ -758,7 +758,7 @@ void CUDSSettingsWnd::OnBnCancelPressed(){
 	//UpdateData();
 	m_omStdDiag.SetCurSel(Prev_DiagnosticsIndex);
 	OnCbnSelchangeStandardDiag();
-	UdsProtocolPtr->fInterface = sg_asSupportedInterface[Prev_InterfaceIndex].m_eType;  //Lo coloco acá para modificar cosas en el MainWnd 
+	UdsProtocolPtr->fInterface = sg_asSupportedInterface[Prev_InterfaceIndex].m_eType;  
 	m_omInterface.SetCurSel(Prev_InterfaceIndex);
 	switch (UdsProtocolPtr->fInterface){ 
 		case INTERFACE_NORMAL_11:			//In this case I'm changing only the CANID

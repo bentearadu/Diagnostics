@@ -990,9 +990,9 @@
 #define IDM_DISPLAY_MESSAGEWATCHWINDOW_SCROLL 32952
 #define IDM_GRAPH_WND                   32953
 #define IDM_CFGN_REPLAY                 32955
-#define IDM_UDS			                40000	//OJO Defini aqui!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#define IDD_TIMMING_UDS                 40001	//OJO Defini aqui!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-#define IDD_SETTINGS_UDS                40002	//OJO Defini aqui!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+#define IDM_UDS			                40000	
+#define IDD_TIMMING_UDS                 40001	
+#define IDD_SETTINGS_UDS                40002	 
 #define IDM_CFGN_LOG                    32956
 #define ID_OPTION_EXPORT_LOGFILE        32958
 #define ID_UTILITY_FILE_CONVERTER       32959

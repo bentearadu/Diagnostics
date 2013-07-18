@@ -70,7 +70,7 @@ typedef enum eTYPE_BUS
     MOST,
     BUS_TOTAL,
     BUS_INVALID,
-	UDS,			//ADDED by Alejandra Sanchez!!!!!!!!!!!!!!!!!!!!!!!!
+	UDS,			
 } ETYPE_BUS;
 
 typedef enum eDirection

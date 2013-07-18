@@ -70,7 +70,7 @@
 #include "FrameProcessor/BaseFrameProcessor_J1939.h"
 #include "ConfigMsgLogDlg.h"
 #include "Replay/Replay_Extern.h"
-#include "DIL_Interface/DILI_UDS_Protocol.h"					//ADDEDDDDDDDDDD!!!!!!!!!!!!!!!!!!!!!!!!
+#include "DIL_Interface/DILI_UDS_Protocol.h"					
 #include "UDS_Protocol/UDS_Extern.h"
 
 #include "SignalWatch/SignalWatch_extern.h"
@@ -142,7 +142,7 @@ HANDLE g_hSemaphore = NULL;
 static CBaseFrameProcessor_J1939* sg_pouIJ1939Logger = NULL; // Logger interface
 static CBaseDILI_J1939* sg_pouIJ1939DIL = NULL; // DIL interface
 
-static DILI_UDS_Protocol* ptrDILI_UDS_Protocol = NULL;		 // ADDEDDDDD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+static DILI_UDS_Protocol* ptrDILI_UDS_Protocol = NULL;		 
 
 //J1939 Database editor window
 BOOL CMsgSignalDBWnd::sm_bValidJ1939Wnd = FALSE;
@@ -11581,9 +11581,9 @@ void CMainFrame::OnCfgnUdsMainWnd()
 void CMainFrame::OnCfgnUdsSettingsWnd()
 {
   HRESULT hola = DIL_UDS_ShowSettingWnd(this->m_hWnd);
-  // ptrDILI_UDS_Protocol->DisplayUdsMainWnd(this->m_hWnd); //Esta debe ser otra función
-}											  //O ser la misma función pero que indique 
-											  //o tenga como parámetro cual ventana debe aparecer
+  // ptrDILI_UDS_Protocol->DisplayUdsMainWnd(this->m_hWnd); 
+}											  
+											  
 
 
 /*******************************************************************************

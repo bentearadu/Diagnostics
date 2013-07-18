@@ -141,7 +141,7 @@ int CUDSMainWnd::SendFirstFrame(CString omByteStr, unsigned char abByteArr[], mP
 	int i=7; 
 	omByteStrTemp = omByteStr.Left(c_numberOfTaken);				//I take the part of omByteStr that is going to be sent in the first Frame 
 
-	while(FWait_SendingFrame){}										// Wait if something is being sent in this moment
+	//while(FWait_SendingFrame){}										// Wait if something is being sent in this moment
 	while (omByteStrTemp.GetLength()){
 		omTempByte = omByteStrTemp.Right(NO_OF_CHAR_IN_BYTE);
 		abByteArr[i--] = (BYTE)_tcstol(omTempByte, L'\0', 16);		// Fill the array to sent with the current data 
@@ -190,11 +190,11 @@ void CUDSMainWnd::SendContinuosFrames( unsigned char abByteArr[],mPSTXSELMSGDATA
 	}
 	while (DatatoSend.GetLength()){							// While there is remaining data that has to be sent
 		omByteStrTemp = DatatoSend.Left(c_numberOfTaken);	//I take the part of the message that is going to be sent in the current Frame 
-		while(FWait_SendingFrame){}							// Wait if something is being sent in this moment
+		//while(FWait_SendingFrame){}							// Wait if something is being sent in this moment
 
 		while (omByteStrTemp.GetLength()){
 			omTempByte = omByteStrTemp.Right(NO_OF_CHAR_IN_BYTE);
-			abByteArr[i--] = (BYTE)_tcstol(omTempByte, L'\0', 16);				//Llena el arreglo con el msg actual a enviar
+			abByteArr[i--] = (BYTE)_tcstol(omTempByte, L'\0', 16);				// It fills the array
 			omByteStrTemp = omByteStrTemp.Left(omByteStrTemp.GetLength() - NO_OF_CHAR_IN_BYTE);
 		}	  
 		psTxCanMsgUds->m_psTxMsg->m_ucDataLen = 8;					// Consecutive Frames can always have 8 bytes 
@@ -245,9 +245,10 @@ void CUDSMainWnd::SendSimpleDiagnosticMessage(void){
 	// member in app class. This will be used to terminate
 	// the thread.
 	if(	psTxCanMsgUds->m_psTxMsg->m_unMsgID != 0 && (TargetAddress || SourceAddress)!=0 ) { 
-		CWinThread* pomThread = NULL ;
-		pomThread = AfxBeginThread( OnSendSelectedMsg, psTxCanMsgUds );
-		FWait_SendingFrame = TRUE;		 // No one can send another message  until this procedure has ended  		
+		//CWinThread* pomThread = NULL ;
+		//pomThread = AfxBeginThread( OnSendSelectedMsg, psTxCanMsgUds );
+		//FWait_SendingFrame = TRUE;		 // No one can send another message  until this procedure has ended 
+	int nReturn = g_pouDIL_CAN_Interface->DILC_SendMsg(g_dwClientID, psTxCanMsgUds->m_psTxMsg[0]);
 	}
 	StartTimer();
 }	
@@ -328,7 +329,7 @@ void CUDSMainWnd::PrepareDiagnosticMessage(CString omByteStr,mPSTXSELMSGDATA psT
 		omByteStr = omByteStr+ LastString; 
 
 	}
-	Result = LengthStr / 2 + LengthStr % 2;				// Result posee la cantidad de bytes que desean ser enviados
+	Result = LengthStr / 2 + LengthStr % 2;				
 	TotalLength = Result; 
 	m_omSendButton.EnableWindow(FALSE);	 //I have to disable the sendButton everytime that I press SEND
 	// If it's a long request I need it 
@@ -472,7 +473,7 @@ void CUDSMainWnd::PrepareDiagnosticMessage(CString omByteStr,mPSTXSELMSGDATA psT
 void CUDSMainWnd::OnBnClickedSendUD(){
 	KillTimer(ID_TIMER_TP);	   //Added to kill the timer everyTime I've pressed the SEND button
 	FSending = TRUE;		// This flag is used to know if a message has been sent from the UDSMainWnd
-	Bytes_to_Show= ("\r\n   1 -> ");			//Inicialización de la sección de ResponseData
+	Bytes_to_Show= ("\r\n   1 -> ");			
 	BytesShown_Line = 1;	m_abDatas = " ";
 	m_omDiagService = initialEval(m_omMsgDataEdit);
 	m_omBytes.vSetValue(0);
@@ -644,7 +645,7 @@ void CUDSMainWnd::OnEnChangeData(){
 
 	UINT Data_Length = (LengthStr/2) + LengthStr%2;; 
 	m_stringEditDLC = (LengthStr/2) + LengthStr%2;
-	//Bytes_to_Show= ("\r\n->    1");			//Inicialización de la sección de ResponseData
+
 	BytesShown_Line = 1;
 	m_abDatas = " ";
 	m_omDiagService = " ";
@@ -925,7 +926,7 @@ int CUDSMainWnd::nCalculateCurrTime(BOOL bFromDIL)      // Calculates the differ
 	}
 	int nResult = (CurrSysTimes.wHour * 3600000 + CurrSysTimes.wMinute * 60000
 		+ CurrSysTimes.wSecond) * 1000 + CurrSysTimes.wMilliseconds *1;
-	return nResult;					 //Devuelve el tiempo en Milisegundos
+	return nResult;					 // Milliseconds 
 }
 
 //________________________________________________________________________________________________________________________________________________________________
